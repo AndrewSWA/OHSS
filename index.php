@@ -12,6 +12,7 @@ if(!isset($_SESSION)){
 if(isset($_POST['barcode'])) {
 	add_item(processBarcode($_POST['barcode']));
 }
+print "<a href='reset.php'>Click to restart</a><br><br>";
 print print_scan_form();
 print render_scanned_results();
 // print_scan_order_details();
