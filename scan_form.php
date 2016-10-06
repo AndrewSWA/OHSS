@@ -2,5 +2,5 @@
 
 function print_scan_form() {
 	//TODO: generate form here.
-	return "<h4>form goes here<h4>";
+	return "<form><textarea></textarea><input type='submit' value='Submit'></form>";
 }
