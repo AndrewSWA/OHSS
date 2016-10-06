@@ -124,6 +124,7 @@ $sql = "
 
 SELECT
 
+e.index_entry as barcode,
 r.record_num as bib_record_num,
 upper(p.call_number_norm) as call_number_norm,
 v.field_content as volume,
@@ -170,9 +171,9 @@ ON
   (i.id = v.record_id) AND (v.varfield_type_code = 'v')
 
 WHERE
-e.index_tag || e.index_entry = 'b' || UPPER('R008818288')
+e.index_tag || e.index_entry = 'b' || UPPER(' " . $barcode . " ')
 OR
-e.index_tag || e.index_entry = 'b' || LOWER('R008818288')
+e.index_tag || e.index_entry = 'b' || LOWER('" . $barcode . "')
 
 
 ";
@@ -186,6 +187,9 @@ if($row["volume"]) {
 		" " . 
 		normalize_volume($row["volume"]);
 }
+
+// add the query to the json result for testing
+//$row["sql"] = $sql;
 
 header('Content-Type: application/json');
 echo json_encode($row);
