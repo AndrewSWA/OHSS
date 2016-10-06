@@ -1,6 +1,5 @@
 <?php
 
 function print_scan_form() {
-	//TODO: generate form here.
-	return "<form><textarea></textarea><input type='submit' value='Submit'></form>";
+	return "<form><input type='text' name='barcode'/><input type='submit' value='Submit'></form>";
 }
