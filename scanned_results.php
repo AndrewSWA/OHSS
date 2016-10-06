@@ -8,7 +8,7 @@ function render_scanned_results() {
 		$prev['error'] = true;
 	}
 
-	print('<table>');
+	print('<table border="3">');
 	print('<tr>');
 
 	foreach (array_keys($prev) as $key) {
