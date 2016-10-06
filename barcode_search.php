@@ -1,5 +1,8 @@
 <?php
 
+// test API location :
+// http://library2.udayton.edu/ray/ohss/barcode_search.php?barcode=R008818288
+
 function left_pad_number($number, $pad_amount) {
 	//returns a string value of a number padded out to the maximum length of the $pad_amount
 	
